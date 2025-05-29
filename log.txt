@@ -1,0 +1,249 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-oauth2-client:jar -> duplicate declaration of version (?) @ line 145, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -------------< com.practicaticket.dcm:practica-ticket-dcm >-------------
+[INFO] Building Practica Ticket Dcm 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.5:run (default-cli) > test-compile @ practica-ticket-dcm >>>
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-versions) @ practica-ticket-dcm ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+[INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (enforce-dependencyConvergence) @ practica-ticket-dcm ---
+[WARNING] Rule 0: org.apache.maven.enforcer.rules.dependency.DependencyConvergence failed with message:
+Failed while enforcing releasability.
+
+Dependency convergence error for org.checkerframework:checker-qual:jar:3.37.0 paths to dependency are:
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-com.github.ben-manes.caffeine:caffeine:jar:3.1.8:compile
+    +-org.checkerframework:checker-qual:jar:3.37.0:compile
+and
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.postgresql:postgresql:jar:42.7.5:compile
+    +-org.checkerframework:checker-qual:jar:3.48.3:runtime
+
+
+Dependency convergence error for javax.xml.bind:jaxb-api:jar:2.2.12 paths to dependency are:
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-com.fasterxml.jackson.module:jackson-module-jaxb-annotations:jar:2.18.3:compile
+    +-javax.xml.bind:jaxb-api:jar:2.2.12:compile
+and
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.liquibase:liquibase-core:jar:4.29.2:compile
+    +-javax.xml.bind:jaxb-api:jar:2.3.1:compile
+
+
+Dependency convergence error for com.google.errorprone:error_prone_annotations:jar:2.21.1 paths to dependency are:
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-com.github.ben-manes.caffeine:caffeine:jar:3.1.8:compile
+    +-com.google.errorprone:error_prone_annotations:jar:2.21.1:compile
+and
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.springframework.cloud:spring-cloud-starter-consul-config:jar:4.2.1:compile
+    +-org.springframework.cloud:spring-cloud-starter-consul:jar:4.2.1:compile
+      +-com.google.code.gson:gson:jar:2.11.0:compile
+        +-com.google.errorprone:error_prone_annotations:jar:2.27.0:compile
+
+
+Dependency convergence error for org.apache.commons:commons-text:jar:1.11.0 paths to dependency are:
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.liquibase:liquibase-core:jar:4.29.2:compile
+    +-com.opencsv:opencsv:jar:5.9:compile
+      +-org.apache.commons:commons-text:jar:1.11.0:compile
+and
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.liquibase:liquibase-core:jar:4.29.2:compile
+    +-org.apache.commons:commons-text:jar:1.12.0:compile
+
+
+Dependency convergence error for org.apache.httpcomponents:httpclient:jar:4.5.5 paths to dependency are:
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.springframework.cloud:spring-cloud-starter-consul-config:jar:4.2.1:compile
+    +-org.springframework.cloud:spring-cloud-starter-consul:jar:4.2.1:compile
+      +-com.ecwid.consul:consul-api:jar:1.4.5:compile
+        +-org.apache.httpcomponents:httpclient:jar:4.5.5:runtime
+and
++-com.practicaticket.dcm:practica-ticket-dcm:jar:0.0.1-SNAPSHOT
+  +-org.springframework.cloud:spring-cloud-starter-consul-config:jar:4.2.1:compile
+    +-org.springframework.cloud:spring-cloud-starter-consul:jar:4.2.1:compile
+      +-org.apache.httpcomponents:httpclient:jar:4.5.14:compile
+
+[INFO] 
+[INFO] --- properties:1.2.1:read-project-properties (default) @ practica-ticket-dcm ---
+[INFO] Loading 30 properties from File: /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/sonar-project.properties
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (pre-unit-tests) @ practica-ticket-dcm ---
+[INFO] argLine set to -javaagent:/home/ulloa/.m2/repository/org/jacoco/org.jacoco.agent/0.8.13/org.jacoco.agent-0.8.13-runtime.jar=destfile=/home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/jacoco.exec -Djava.security.egd=file:/dev/./urandom -Xmx1G
+[INFO] 
+[INFO] --- openapi-generator:7.13.0:generate (default) @ practica-ticket-dcm ---
+[INFO] Generating with dryRun=false
+[INFO] No .openapi-generator-ignore file found.
+[INFO] OpenAPI Generator: spring (server)
+[INFO] Generator 'spring' is considered stable.
+[INFO] ----------------------------------
+[INFO] Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
+[INFO] NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[INFO] Invoker Package Name, originally not set, is now derived from api package name: com.practicaticket.dcm.web
+[INFO] Inline schema created as inline_object. To have complete control of the model name, set the `title` field or use the modelNameMapping option (e.g. --model-name-mappings inline_object=NewModel,ModelA=NewModelA in CLI) or inlineSchemaNameMapping option (--inline-schema-name-mappings inline_object=NewModel,ModelA=NewModelA in CLI).
+[INFO] writing file /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/com/practicaticket/dcm/service/api/dto/InlineObject.java
+[INFO] Skipping generation of Webhooks.
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/pom.xml (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/README.md (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/org/openapitools/OpenApiGeneratorApplication.java (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/test/java/org/openapitools/OpenApiGeneratorApplicationTests.java (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/org/openapitools/RFC3339DateFormat.java (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/resources/application.properties (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/org/openapitools/configuration/HomeController.java (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/resources/openapi.yaml (Skipped by supportingFiles options supplied by user.)
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/org/openapitools/configuration/SpringDocConfiguration.java (Skipped by supportingFiles options supplied by user.)
+[INFO] writing file /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/src/main/java/com/practicaticket/dcm/web/api/ApiUtil.java
+[INFO] Skipped /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/.openapi-generator-ignore (Skipped by supportingFiles options supplied by user.)
+[INFO] writing file /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/.openapi-generator/VERSION
+[INFO] writing file /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/target/generated-sources/openapi/.openapi-generator/FILES
+################################################################################
+# Thanks for using OpenAPI Generator.                                          #
+# Please consider donation to help us maintain this project 🙏                 #
+# https://opencollective.com/openapi_generator/donate                          #
+################################################################################
+[INFO] 
+[INFO] --- spotless:2.44.4:apply (spotless) @ practica-ticket-dcm ---
+[INFO] Spotless.Java is keeping 141 files clean - 0 were changed to be clean, 0 were already clean, 141 were skipped because caching determined they were already clean
+[INFO] 
+[INFO] --- spring-boot:3.4.5:build-info (build-info) @ practica-ticket-dcm ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ practica-ticket-dcm ---
+[INFO] Copying 6 resources from src/main/resources to target/classes
+[INFO] Copying 20 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ practica-ticket-dcm ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 89 source files with javac [debug parameters release 17] to target/classes
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/CommentMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO ticket.user" to "User ticket.user". Occured at 'E toEntity(D dto)' in 'EntityMapper'.
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/CommentMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO user" to "User user". Occured at 'E toEntity(D dto)' in 'EntityMapper'.
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/CommentMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO ticket.user" to "User ticket.user". Occured at 'void partialUpdate(E entity, D dto)' in 'EntityMapper'.
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/CommentMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO user" to "User user". Occured at 'void partialUpdate(E entity, D dto)' in 'EntityMapper'.
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/TicketMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO user" to "User user". Occured at 'E toEntity(D dto)' in 'EntityMapper'.
+[WARNING] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/main/java/com/practicaticket/dcm/service/mapper/TicketMapper.java:[15,8] Unmapped target properties: "createdBy, createdDate, lastModifiedBy, lastModifiedDate, firstName, lastName, email, imageUrl, activated, langKey, authorities". Mapping from property "UserDTO user" to "User user". Occured at 'void partialUpdate(E entity, D dto)' in 'EntityMapper'.
+[INFO] Hibernate compile-time tooling 6.6.13.Final
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ practica-ticket-dcm ---
+[INFO] Copying 7 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ practica-ticket-dcm ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 54 source files with javac [debug parameters release 17] to target/test-classes
+[INFO] Hibernate compile-time tooling 6.6.13.Final
+[INFO] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/test/java/com/practicaticket/dcm/config/RedisTestContainersSpringContextCustomizerFactory.java: /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/test/java/com/practicaticket/dcm/config/RedisTestContainersSpringContextCustomizerFactory.java uses or overrides a deprecated API.
+[INFO] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/test/java/com/practicaticket/dcm/config/RedisTestContainersSpringContextCustomizerFactory.java: Recompile with -Xlint:deprecation for details.
+[INFO] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/test/java/com/practicaticket/dcm/config/RedisTestContainer.java: Some input files use unchecked or unsafe operations.
+[INFO] /home/ulloa/eclipse-workspace-classesss2/PracticaTicketDCM/src/test/java/com/practicaticket/dcm/config/RedisTestContainer.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] <<< spring-boot:3.4.5:run (default-cli) < test-compile @ practica-ticket-dcm <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.5:run (default-cli) @ practica-ticket-dcm ---
+[INFO] Attaching agents: []
+
+  [32m      ██╗[31m ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
+  [32m      ██║[31m ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
+  [32m      ██║[31m ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
+  [32m██╗   ██║[31m ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
+  [32m╚██████╔╝[31m ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
+  [32m ╚═════╝ [31m ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
+
+[94m:: JHipster 🤓  :: Running Spring Boot 3.4.5 :: Startup profile(s) dev ::
+:: https://www.jhipster.tech ::[39m
+
+[2m2025-05-21T03:33:30.001-06:00[0;39m [32m INFO[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.dcm.PracticaTicketDcmApp            [0;39m [2m:[0;39m The following 2 profiles are active: "dev", "api-docs" 
+[2m2025-05-21T03:33:31.983-06:00[0;39m [32mDEBUG[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mi.m.c.u.i.logging.InternalLoggerFactory [0;39m [2m:[0;39m Using SLF4J as the default logging framework 
+[2m2025-05-21T03:33:32.177-06:00[0;39m [32m INFO[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.dcm.config.WebConfigurer            [0;39m [2m:[0;39m Web application configuration, using profiles: dev 
+[2m2025-05-21T03:33:32.178-06:00[0;39m [32m INFO[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.dcm.config.WebConfigurer            [0;39m [2m:[0;39m Web application fully configured 
+[2m2025-05-21T03:33:32.643-06:00[0;39m [32mDEBUG[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.dcm.config.AsyncConfiguration       [0;39m [2m:[0;39m Creating Async Task Executor 
+[2m2025-05-21T03:33:32.724-06:00[0;39m [32mDEBUG[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.p.dcm.config.LiquibaseConfiguration   [0;39m [2m:[0;39m Configuring Liquibase 
+[2m2025-05-21T03:33:32.870-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[cket-dcm-task-1][0;39m [36mt.j.c.liquibase.AsyncSpringLiquibase    [0;39m [2m:[0;39m Starting Liquibase asynchronously, your database might not be ready at startup! 
+[2m2025-05-21T03:33:33.363-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.372-06:00[0;39m [32mDEBUG[0;39m [35m325027[0;39m [2m---[0;39m [2m[cket-dcm-task-1][0;39m [36mt.j.c.liquibase.AsyncSpringLiquibase    [0;39m [2m:[0;39m Liquibase has updated your database in 502 ms 
+[2m2025-05-21T03:33:33.505-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.505-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.507-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.507-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.507-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.549-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36morg.hibernate.orm.incubating            [0;39m [2m:[0;39m HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details. 
+[2m2025-05-21T03:33:33.639-06:00[0;39m [31mERROR[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=com.practicaticket.dcm.domain.User] 
+[2m2025-05-21T03:33:33.640-06:00[0;39m [33m WARN[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mConfigServletWebServerApplicationContext[0;39m [2m:[0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=com.practicaticket.dcm.domain.User] 
+[2m2025-05-21T03:33:33.669-06:00[0;39m [32m INFO[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36m.s.b.a.l.ConditionEvaluationReportLogger[0;39m [2m:[0;39m 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled. 
+[2m2025-05-21T03:33:33.681-06:00[0;39m [31mERROR[0;39m [35m325027[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.boot.SpringApplication              [0;39m [2m:[0;39m Application run failed 
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=com.practicaticket.dcm.domain.User]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.practicaticket.dcm.PracticaTicketDcmApp.main(PracticaTicketDcmApp.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Could not instantiate id generator [entity-name=com.practicaticket.dcm.domain.User]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:431)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814)
+	... 18 common frames omitted
+Caused by: org.hibernate.MappingException: Could not instantiate id generator [entity-name=com.practicaticket.dcm.domain.User]
+	at org.hibernate.id.factory.internal.StandardIdentifierGeneratorFactory.createIdentifierGenerator(StandardIdentifierGeneratorFactory.java:237)
+	at org.hibernate.id.factory.internal.IdentifierGeneratorUtil.createLegacyIdentifierGenerator(IdentifierGeneratorUtil.java:42)
+	at org.hibernate.mapping.SimpleValue.createGenerator(SimpleValue.java:402)
+	at org.hibernate.internal.SessionFactoryImpl.lambda$createGenerators$1(SessionFactoryImpl.java:467)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(HashMap.java:1779)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.hibernate.internal.SessionFactoryImpl.createGenerators(SessionFactoryImpl.java:465)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:280)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	... 22 common frames omitted
+Caused by: org.hibernate.MappingException: The increment size of the [jhi_user_seq] sequence is set to [50] in the entity mapping while the associated database sequence increment size is [1].
+	at org.hibernate.id.enhanced.SequenceStyleGenerator.adjustIncrementSize(SequenceStyleGenerator.java:287)
+	at org.hibernate.id.enhanced.SequenceStyleGenerator.configure(SequenceStyleGenerator.java:222)
+	at org.hibernate.id.factory.internal.StandardIdentifierGeneratorFactory.createIdentifierGenerator(StandardIdentifierGeneratorFactory.java:231)
+	... 41 common frames omitted
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  34.939 s
+[INFO] Finished at: 2025-05-21T03:33:57-06:00
+[INFO] ------------------------------------------------------------------------

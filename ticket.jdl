@@ -1,0 +1,36 @@
+// Solo define las nuevas entidades, sin redefinir 'User'
+
+entity Ticket {
+  title String required,
+  description TextBlob required,
+  status TicketStatus required,
+  createdDate Instant required,
+  updatedDate Instant
+}
+
+enum TicketStatus {
+  OPEN, IN_PROGRESS, RESOLVED, CLOSED
+}
+
+entity Category {
+  name String required,
+  description String
+}
+
+entity Comment {
+  content TextBlob required,
+  createdDate Instant required
+}
+
+// Relaciones con la entidad 'User' ya existente
+relationship ManyToOne {
+  Ticket{category(name)} to Category,
+  Ticket{user(login)} to User with builtInEntity,
+  Comment{ticket(title)} to Ticket,
+  Comment{user(login)} to User with builtInEntity
+}
+
+dto * with mapstruct
+paginate Ticket, Comment with pagination
+service * with serviceClass
+filter *

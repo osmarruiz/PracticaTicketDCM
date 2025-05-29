@@ -1,0 +1,53 @@
+# IDE
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+*.iml
+*.iws
+*.ipr
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.yarn-integrity
+
+# Build Artifacts
+target/
+build/
+dist/
+out/
+
+# Logs
+*.log
+
+# Temp files
+tmp/
+temp/
+
+# Database (for development)
+*.mv.db  # H2 database file
+*.trace.db # H2 database trace file
+
+# JHipster Specific
+.jhipster/
+.jhipster-module/
+# Configuration files (if they contain sensitive data or local overrides)
+application-dev.yml.bak
+application-prod.yml.bak
+
+# Docker (if you use custom volumes that should not be tracked)
+# /data/
+
+# Generated clients (if not committed to version control, which is often the case for very large generated code)
+# src/main/webapp/app/shared/model/
+# src/main/webapp/app/entities/
+
+# Spring Boot devtools restart
+# .reloader.token
+
+# Application configuration files
+src/main/resources/config/application-dev.yml
+src/main/resources/config/application-prod.yml
