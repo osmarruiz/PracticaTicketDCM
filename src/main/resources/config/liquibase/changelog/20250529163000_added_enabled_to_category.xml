@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.29.xsd"
+  objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+  <changeSet id="1748558325832-1" author="user">
+    <addColumn tableName="category">
+      <column name="enabled" type="boolean"/>
+    </addColumn>
+
+    <update tableName="category">
+      <column name="enabled" valueBoolean="true"/>
+    </update>
+
+    <addNotNullConstraint
+      tableName="category"
+      columnName="enabled"
+      columnDataType="boolean"/>
+  </changeSet>
+
+</databaseChangeLog>

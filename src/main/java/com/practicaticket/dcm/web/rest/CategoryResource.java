@@ -6,17 +6,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import com.esotericsoftware.minlog.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.practicaticket.dcm.repository.CategoryRepository;
 import com.practicaticket.dcm.service.CategoryQueryService;
@@ -90,6 +85,7 @@ public class CategoryResource {
         LOG.debug("REST request to get Categories by criteria: {}", criteria);
 
         List<CategoryDTO> entityList = categoryQueryService.findByCriteria(criteria);
+        LOG.debug("esta es la lista: {}", entityList);
         return ResponseEntity.ok().body(entityList);
     }
 
@@ -116,6 +112,56 @@ public class CategoryResource {
         LOG.debug("REST request to get Category : {}", id);
         Optional<CategoryDTO> categoryDTO = categoryService.findOne(id);
         return ResponseUtil.wrapOrNotFound(categoryDTO);
+    }
+
+    /**
+     * {@code PATCH  /categories/:id} : Partial updates given fields of an existing category, field will ignore if it is null
+     *
+     * @param id the id of the categoryDTO to save.
+     * @param categoryDTO the categoryDTO to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated categoryDTO,
+     * or with status {@code 400 (Bad Request)} if the categoryDTO is not valid,
+     * or with status {@code 404 (Not Found)} if the categoryDTO is not found,
+     * or with status {@code 500 (Internal Server Error)} if the categoryDTO couldn't be updated.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+
+    @PostMapping(value = "/{id}/partial-update", consumes = { "application/json", "application/merge-patch+json" })
+    public ResponseEntity<CategoryDTO> partialUpdateCategory(
+        @PathVariable(value = "id", required = false) final Long id,
+        @RequestBody CategoryDTO categoryDTO
+    ) throws URISyntaxException {
+        LOG.debug("REST request to partially update Category : {}, {}", id, categoryDTO);
+        if (categoryDTO.getId() == null) {
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        if (!Objects.equals(id, categoryDTO.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!categoryRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+
+        Optional<CategoryDTO> result = categoryService.partialUpdate(categoryDTO);
+
+        return ResponseUtil.wrapOrNotFound(
+            result,
+            HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, categoryDTO.getId().toString())
+        );
+    }
+
+    /**
+     * {@code DELETE  /categories/:id} : delete the "id" category.
+     *
+     * @param id the id of the categoryDTO to delete.
+     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
+        LOG.debug("REST request to delete Category : {}", id);
+        categoryService.delete(id);
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
 
 }

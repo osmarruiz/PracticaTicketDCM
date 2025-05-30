@@ -28,6 +28,8 @@ public class CategoryCriteria implements Serializable, Criteria {
 
     private StringFilter description;
 
+    private  BooleanFilter enabled;
+
     private Boolean distinct;
 
     public CategoryCriteria() {}
@@ -36,6 +38,7 @@ public class CategoryCriteria implements Serializable, Criteria {
         this.id = other.optionalId().map(LongFilter::copy).orElse(null);
         this.name = other.optionalName().map(StringFilter::copy).orElse(null);
         this.description = other.optionalDescription().map(StringFilter::copy).orElse(null);
+        this.enabled = other.optionalEnabled().map(BooleanFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
 
@@ -101,6 +104,25 @@ public class CategoryCriteria implements Serializable, Criteria {
         this.description = description;
     }
 
+    public BooleanFilter getEnabled() {
+        return enabled;
+    }
+
+    public Optional<BooleanFilter> optionalEnabled() {
+        return Optional.ofNullable(enabled);
+    }
+
+    public BooleanFilter enabled() {
+        if (enabled == null) {
+            setEnabled(new BooleanFilter());
+        }
+        return enabled;
+    }
+
+    public void setEnabled(BooleanFilter enabled) {
+        this.enabled = enabled;
+    }
+
     public Boolean getDistinct() {
         return distinct;
     }
@@ -133,13 +155,14 @@ public class CategoryCriteria implements Serializable, Criteria {
             Objects.equals(id, that.id) &&
             Objects.equals(name, that.name) &&
             Objects.equals(description, that.description) &&
-            Objects.equals(distinct, that.distinct)
+                Objects.equals(enabled, that.enabled) &&
+                Objects.equals(distinct, that.distinct)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, distinct);
+        return Objects.hash(id, name, description, enabled, distinct);
     }
 
     // prettier-ignore
@@ -149,6 +172,7 @@ public class CategoryCriteria implements Serializable, Criteria {
             optionalId().map(f -> "id=" + f + ", ").orElse("") +
             optionalName().map(f -> "name=" + f + ", ").orElse("") +
             optionalDescription().map(f -> "description=" + f + ", ").orElse("") +
+            optionalEnabled().map(f -> "enabled=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";
     }

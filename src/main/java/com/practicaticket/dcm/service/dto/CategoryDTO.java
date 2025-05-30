@@ -17,6 +17,9 @@ public class CategoryDTO implements Serializable {
 
     private String description;
 
+    @NotNull
+    private Boolean enabled;
+
     public Long getId() {
         return id;
     }
@@ -39,6 +42,13 @@ public class CategoryDTO implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override
@@ -69,6 +79,7 @@ public class CategoryDTO implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", description='" + getDescription() + "'" +
+            ", enabled=" + getEnabled() +
             "}";
     }
 }

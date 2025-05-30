@@ -30,6 +30,10 @@ public class Category implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @NotNull
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -71,6 +75,18 @@ public class Category implements Serializable {
         this.description = description;
     }
 
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+    public Category enabled(Boolean enabled) {
+        this.setEnabled(enabled);
+        return this;
+    }
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -97,6 +113,7 @@ public class Category implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", description='" + getDescription() + "'" +
+            ", enabled=" + getEnabled() +
             "}";
     }
 }
